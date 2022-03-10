@@ -9,8 +9,8 @@
 
 <div align="center">
 
-# Ali@Akamai
-Inspired by z and autojump.
+# Welcome to Ali Lakhani's Repo
+Built for Akamai, with Love!
 
 [Getting started](#getting-started) •
 [Installation](#installation) •
@@ -22,19 +22,18 @@ Inspired by z and autojump.
 ## Getting started
 
 
-| Rules       | Behavior              | Feature                                                                                   |
-| ------------------ | ----------------------- | ---------------------------------------------------------------------------------------------- |
-| ***Default Rule***          |         |   |                                                               |
-|              | **Origin server**           |                                                    |       |
-|              | Cache Key Hostname             |  Incoming Host Header                                                          
-|              | Supports Gzip Compression             |  Yes                                                          
-|              | Send True Client IP Header             |  Yes                                                          
-|              | Forward Host Header             |  Incoming Host Header                                                          
-|              | Origin Server Hostname           |  {{user.PMUSER_ORIGINSERVER}}
-|              | HTTP Port             |  80
-|              | HTTPS Port             |  443                            
-|              | Use SNI TLS Extension             |  Yes   
-|              | Allow Clients To Set True Client IP Header             |  No
-|              | True Client IP Header Name             |  True-Client-IP
-                                          
-                |
+| Rules | Behavior | Feature |
+| ----- | -------- | ------- |
+| ***Default Rule*** |                             |
+|                    | **Origin server**           |
+|                    | Cache Key Hostname          |  Incoming Host Header
+|                    | Supports Gzip Compression   |  Yes                                                          
+|                    | Send True Client IP Header  |  Yes                                                          
+|                    | Forward Host Header         |  Incoming Host Header                                                          
+|                    | Origin Server Hostname      |  {{user.PMUSER_ORIGINSERVER}}
+|                    | HTTP Port                   |  80
+|                    | HTTPS Port                  |  443                            
+|                    | Use SNI TLS Extension       |  Yes   
+|                    | Allow Clients To Set True Client IP Header |  No
+|                    | True Client IP Header Name  |  True-Client-IP
+| ----- | -------- | ------- |                                          
