@@ -19,8 +19,8 @@ Built for Akamai, with Love!
 
 </div>
 
-## Getting started
-
+## Property Manager
+Following rules will be created with Need to [propertyManager](https://github.com/alilakhani786/akamai/tree/main/terraform/propertyManager) terraform project.
 
 | Rules | Behavior | Feature |
 | ----- | -------- | ------- |
@@ -36,4 +36,3 @@ Built for Akamai, with Love!
 |                    | Use SNI TLS Extension       |  Yes   
 |                    | Allow Clients To Set True Client IP Header |  No
 |                    | True Client IP Header Name  |  True-Client-IP
-| ----- | -------- | ------- |                                          
