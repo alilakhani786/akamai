@@ -9,20 +9,6 @@
 
 <div align="center">
 
-# Welcome to Ali Lakhani's Repo
-Built for Akamai, with Love!
-
-[Getting started](#getting-started) •
-[Installation](#installation) •
-[Configuration](#configuration) •
-[Integrations](#third-party-integrations)
-
-[Property Manager](#terraform/propertyManager) •
-[Application Security](#installation) •
-
-
-</div>
-
 ## Property Manager
 Following rules will be created with Need to [propertyManager](https://github.com/alilakhani786/akamai/tree/main/terraform/propertyManager) terraform project.
 
@@ -40,3 +26,5 @@ Following rules will be created with Need to [propertyManager](https://github.co
 |                    | Use SNI TLS Extension       |  Yes   
 |                    | Allow Clients To Set True Client IP Header |  No
 |                    | True Client IP Header Name  |  True-Client-IP
+
+</div>
