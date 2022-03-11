@@ -23,7 +23,7 @@ Built for Akamai, with Love!
 
 </div>
 
-## Property Manager
+## template-ion
 Following rules will be created with Need to [propertyManager](https://github.com/alilakhani786/akamai/tree/main/terraform/propertyManager) terraform project.
 
 | Rules | Behavior | Feature |
