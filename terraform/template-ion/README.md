@@ -8,8 +8,8 @@
 } -->
 
 <div align="center">
-
-## Property Manager
+## template-ion
+</div>
 Following rules will be created with Need to [propertyManager](https://github.com/alilakhani786/akamai/tree/main/terraform/propertyManager) terraform project.
 
 | Rules | Behavior | Feature |
@@ -26,5 +26,3 @@ Following rules will be created with Need to [propertyManager](https://github.co
 |                    | Use SNI TLS Extension       |  Yes   
 |                    | Allow Clients To Set True Client IP Header |  No
 |                    | True Client IP Header Name  |  True-Client-IP
-
-</div>
