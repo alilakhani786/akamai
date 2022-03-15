@@ -6,4 +6,4 @@ variable "configuration_description" {}
 variable "policy_name" {}
 variable "policy_prefix" {}
 
-variable "hostname" { }
+variable "hostname" {}

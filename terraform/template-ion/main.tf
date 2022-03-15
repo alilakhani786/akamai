@@ -46,7 +46,6 @@ resource "akamai_property" "res-property" {
   rules       = data.akamai_property_rules_template.rules.json
 }
 
-/*
 # Activate property in staging
 resource "akamai_property_activation" "res-property" {
   property_id = akamai_property.res-property.id
@@ -55,4 +54,3 @@ resource "akamai_property_activation" "res-property" {
   network     = upper("staging")
   note        = "Test Automation"
 }
-*/
