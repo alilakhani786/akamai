@@ -17,6 +17,10 @@ Built for Akamai, with Love!
 [Terraform templates](#terraform-templates) •
 [Integrations](#third-party-integrations)
 
+</div>
+
+<div align="left">
+
 ## Getting started
 
  * Before you can use API/Terraform, you need to [Create authentication credentials.](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials) Also check: [Setup Akamai Develoment Enviroment](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials)
