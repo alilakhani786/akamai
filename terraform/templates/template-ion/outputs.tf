@@ -33,7 +33,22 @@ output "cert_provisioning_type" {
   sensitive = false
 }
 
-output "cnameFrom" {
-    value = akamai_property.res-property.hostnames[*].cname_from
-    sensitive = false
+output "hostname" {
+  value     = akamai_property.res-property.hostnames[*].cname_from
+  sensitive = false
+}
+
+output "rule_format" {
+  value     = akamai_property.res-property.rule_format
+  sensitive = false
+}
+
+output "cpcode_name" {
+  value     = akamai_cp_code.cp_code.name
+  sensitive = false
+}
+
+output "configuration_name" {
+  value     = akamai_property.res-property.name
+  sensitive = false
 }

@@ -3,6 +3,10 @@
 **/.terraform/*
 **/.terraform.lock.hcl/*
 **/sea-lakhanis/*
+*/ew.lakhanis.net/*
+*/template-ion/*
+**/edgedns/*
+**/ion/*
 
 # .tfstate files
 *.tfstate
