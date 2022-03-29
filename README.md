@@ -35,6 +35,7 @@ Built for Akamai, with Love!
 akamai terraform --section <section_name> create-property <property_name>
 ```
 Example output :
+<p style="font-size: x-small">
 
 ```
 Configuring Property
@@ -60,5 +61,6 @@ drwxr-xr-x  8 nlakhani  staff   256 Mar 28 19:49 .
 drwx------  9 nlakhani  staff   288 Mar 28 19:49 ..
 nlakhani@sin-mpewj ew.lakhanis.net %
 ```
+</p>
 
 </div>
