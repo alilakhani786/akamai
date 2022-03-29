@@ -1,15 +1,12 @@
-version: '2.1'
+version: 2.1
 orbs:
-  terraform: circleci/terraform@1.2.1
+  terraform: circleci/terraform@3.0.1
 workflows:
-create_property:
-  jobs:
-  - terraform/validate:
-      checkout: true
-      context: terraform
-  - terraform/plan:
-      checkout: true
-      context: terraform
-      persist-workspace: true
-      requires:
-      - terraform/validate
+    example-workflow:
+      jobs:
+        - terraform/init:
+            checkout: true
+            context: terraform
+        - terraform/validate:
+            checkout: true
+            context: terraform
