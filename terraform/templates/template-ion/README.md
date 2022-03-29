@@ -26,7 +26,13 @@ ION-Template is a Terraform project which enables you to automate onboarding of 
 
  ### Thereafter
 
-* ``` Git clone https://github.com/alilakhani786/akamai.git ```
+* ``` Git clone https://github.com/alilakhani786/akamai.git ``` and open the project in VSCode <br />
+<img
+  src="img/vs01.png"
+  alt=""
+  title="Project tree"
+  style="display: inline-block; margin: 0 auto; max-width: 600px">
+
 
  ## What rules will be created?
 
