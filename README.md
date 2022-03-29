@@ -13,12 +13,14 @@
 Built for Akamai, with Love!
 
 [Getting started](#getting-started) •
-[Installation](#installation) •
-[Configuration](#configuration) •
+[Self servive tips](#self-service) •
+[Terraform templates](#terraform-templates) •
 [Integrations](#third-party-integrations)
 
-[Delivery Configuration](#terraform/propertyManager) •
-[Application Security](#installation) •
+## Getting started
 
+ * Before you can use API/Terraform, you need to [Create authentication credentials.](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials) Also check: [Setup Akamai Develoment Enviroment](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials)
+ * You need to determine the IDs for your contracts and groups prior to using this API. Both operations are available through the [Property Manager API](https://techdocs.akamai.com/property-mgr/reference/api) (PAPI) using its [List contracts](https://techdocs.akamai.com/property-mgr/reference/get-contracts) and [List groups](https://techdocs.akamai.com/property-mgr/reference/get-groups) resources.
+ * Ensure Ceritificate is provisioned and capture enrollment ID
 
-</div> 
+</div>
