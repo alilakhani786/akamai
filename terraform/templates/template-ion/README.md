@@ -16,9 +16,17 @@ ION-Template is a Terraform project which enables you to automate onboarding of 
 ## How to use this template?
 
 ### Before you begin
- * Before you can use API/Terraform, you need to [Create authentication credentials.](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials) Also check: [Setup Akamai Develoment Enviroment](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials)
- * You need to determine the IDs for your contracts and groups prior to using this API. Both operations are available through the [Property Manager API](https://techdocs.akamai.com/property-mgr/reference/api) (PAPI) using its [List contracts](https://techdocs.akamai.com/property-mgr/reference/get-contracts) and [List groups](https://techdocs.akamai.com/property-mgr/reference/get-groups) resources.
- * Ensure Ceritificate is provisioned and capture enrollment ID
+
+ * You need to have API access<br />
+ [Create authentication credentials](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials) | [Setup Akamai Develoment Enviroment](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials)
+ * Setup .edgerc file with your credentials (^)
+ * Determine the IDs for your contracts, groups prior to using the API's. Both operations are available through the [Property Manager API](https://techdocs.akamai.com/property-mgr/reference/api) (PAPI) using its [List contracts](https://techdocs.akamai.com/property-mgr/reference/get-contracts) and [List groups](https://techdocs.akamai.com/property-mgr/reference/get-groups) resources.
+ * Ensure you have a valid certificate provisioned on Akamai Control Center
+ * Ensure you have a development enviroment setup. Minimum: Akamai CLi, Visual Studio Code, Terraform, Git.
+
+ ### Thereafter
+
+* ``` Git clone https://github.com/alilakhani786/akamai.git ```
 
  ## What rules will be created?
 
