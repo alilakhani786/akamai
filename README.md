@@ -17,7 +17,7 @@ Built for Akamai, with Love!
 [Configuration](#configuration) •
 [Integrations](#third-party-integrations)
 
-[Property Manager](#terraform/propertyManager) •
+[Delivery Configuration](#terraform/propertyManager) •
 [Application Security](#installation) •
 
 
