@@ -31,7 +31,7 @@ ION-Template is a Terraform project which enables you to automate onboarding of 
   src="img/vs01.png"
   alt=""
   title="Project tree"
-  style="display: inline-block; margin: 0 auto; width:500px;">
+  style="display: inline-block; margin: 0 auto; width:800px;">
 
 
  ## What rules will be created?
