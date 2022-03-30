@@ -26,12 +26,14 @@ ION-Template is a Terraform project which enables you to automate onboarding of 
 
  ### Thereafter
 
-* ``` Git clone https://github.com/alilakhani786/akamai.git ``` and open the project in VSCode <br />
+* ``` Git clone https://github.com/alilakhani786/akamai.git ``` and open the project in VSCode. You should see the below file structure. <br /><br />
 <img
   src="img/vs01.png"
   alt=""
   title="Project tree"
   style="display: inline-block; margin: 0 auto; width:800px;">
+  <br/><br/>
+  * main.tf is the entry point where resources: akamai_property, akamai_edge_hostname, akamai_cpcode, akamai_property_activation as well as data sources for group, contract and rules is defined.
 
 
  ## What rules will be created?
