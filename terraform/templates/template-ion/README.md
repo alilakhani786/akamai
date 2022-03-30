@@ -45,31 +45,13 @@ ION-Template is a Terraform project which enables you to automate onboarding of 
   style="display: inline-block; margin: 0 auto; width:900px;">
   property-snippets/main.json chat view (^)
   <br/><br/>
-* All the rules and behaviors are nicely broken down into chunks of json for ease of manageability. There is no hard and fast rule to have this structure and you can modify as you see fit. For e.g. Augment_insights.json cosists of all nessasary behaviours related to insights and Offload_origin.json consists of all behaviours related to improving offload. You can edit this as and when you need and run terraform to make updates. you may also add new snippets e.g. edgeworkers.json and add the snippet in main.json.
 
+* All the rules and behaviors are nicely broken down into chunks of json for ease of manageability. There is no hard and fast rule to have this structure and you can modify as you see fit. For e.g. Augment_insights.json cosists of all nessasary behaviours related to insights and Offload_origin.json consists of all behaviours related to improving offload. You can edit this as and when you need and run terraform to make updates. you may also add new snippets e.g. edgeworkers.json and add the snippet in main.json.
+* TIP: you may copy paste each snippet in http://json2table.com/ to view in grid format to review configuration. 
 * Ensure you have .edgerc file and section_name setup in provider.tf file. Ensure all the variables are correctly setup in tfvars.
 * Goto root folder of the project and run terraform init, terraform plan, terraform apply. Note: you may want to connect ```akamai_property_activation``` resource in ```main.tf``` for the first run for sanity check as activation takes time. This is how I do it.
 
+### Happy Terraform-ing.
 
-
-
- ## What rules will be created?
-
-Following rules will be created with Need to [propertyManager](https://github.com/alilakhani786/akamai/tree/main/terraform/propertyManager) terraform project.
-
-| Rules | Behavior | Feature |
-| ----- | -------- | ------- |
-| ***Default Rule*** |                             |
-|                    | **Origin server**           |
-|                    | Cache Key Hostname          |  Incoming Host Header
-|                    | Supports Gzip Compression   |  Yes                                                          
-|                    | Send True Client IP Header  |  Yes                                                          
-|                    | Forward Host Header         |  Incoming Host Header                                                          
-|                    | Origin Server Hostname      |  Origin Server
-|                    | HTTP Port                   |  80
-|                    | HTTPS Port                  |  443                            
-|                    | Use SNI TLS Extension       |  Yes   
-|                    | Allow Clients To Set True Client IP Header |  No
-|                    | True Client IP Header Name  |  True-Client-IP
 </div>
 </div>
