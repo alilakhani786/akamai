@@ -43,8 +43,9 @@ ION-Template is a Terraform project which enables you to automate onboarding of 
   alt=""
   title="Project tree"
   style="display: inline-block; margin: 0 auto; width:900px;">
+  property-snippets/main.json chat view (^)
   <br/><br/>
-
+* All the rules and behaviors are nicely broken down into chunks of json for ease of manageability. There is no hard and fast rule to have this structure and you can modify as you see fit. For e.g. Augment_insights.json cosists of all nessasary behaviours related to insights and Offload_origin.json consists of all behaviours related to improving offload. You can edit this as and when you need and run terraform to make updates. you may also add new snippets e.g. edgeworkers.json and add the snippet in main.json.
 
 * Ensure you have .edgerc file and section_name setup in provider.tf file. Ensure all the variables are correctly setup in tfvars.
 * Goto root folder of the project and run terraform init, terraform plan, terraform apply. Note: you may want to connect ```akamai_property_activation``` resource in ```main.tf``` for the first run for sanity check as activation takes time. This is how I do it.
