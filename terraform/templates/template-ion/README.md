@@ -43,7 +43,8 @@ ION-Template is a Terraform project which enables you to automate onboarding of 
   alt=""
   title="Project tree"
   style="display: inline-block; margin: 0 auto; width:900px;">
-  property-snippets/main.json chat view (^)
+  
+  <br />property-snippets/main.json chat view (^)
   <br/><br/>
 
 * All the rules and behaviors are nicely broken down into chunks of json for ease of manageability. There is no hard and fast rule to have this structure and you can modify as you see fit. For e.g. Augment_insights.json cosists of all nessasary behaviours related to insights and Offload_origin.json consists of all behaviours related to improving offload. You can edit this as and when you need and run terraform to make updates. you may also add new snippets e.g. edgeworkers.json and add the snippet in main.json.
