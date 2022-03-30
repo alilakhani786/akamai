@@ -51,10 +51,7 @@ ION-Template is a Terraform project which enables you to automate onboarding of 
 * Ensure you have .edgerc file and section_name setup in provider.tf file. Ensure all the variables are correctly setup in tfvars.
 * Goto root folder of the project and run terraform init, terraform plan, terraform apply. Note: you may want to connect ```akamai_property_activation``` resource in ```main.tf``` for the first run for sanity check as activation takes time. This is how I do it.
 
-<br /><br />
-<div align="center">
-### Happy Terraforming!
-</div>
+### <br /><br /><div align="center">Happy Terraforming!</div>
 <br />
 
 </div>
