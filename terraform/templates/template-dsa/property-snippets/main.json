@@ -1,0 +1,54 @@
+{
+  "accountId": "act_B-V-43575RT",
+  "contractId": "ctr_V-434SAU2",
+  "groupId": "grp_215287",
+  "propertyId": "prp_786335",
+  "propertyVersion": 1,
+  "etag": "2859fca8f3ce52c09abed392a333b9da4cb48bf1",
+  "ruleFormat": "latest",
+  "rules": {
+    "name": "default",
+    "behaviors": [
+      {
+        "name": "origin",
+        "options": {
+          "cacheKeyHostname": "REQUEST_HOST_HEADER",
+          "compress": true,
+          "enableTrueClientIp": true,
+          "forwardHostHeader": "REQUEST_HOST_HEADER",
+          "hostname": "{{user.PMUSER_ORIGIN_SERVER}}",
+          "httpPort": 80,
+          "httpsPort": 443,
+          "originCertificate": "",
+          "originSni": true,
+          "originType": "CUSTOMER",
+          "ports": "",
+          "trueClientIpClientSetting": false,
+          "trueClientIpHeader": "True-Client-IP",
+          "verificationMode": "PLATFORM_SETTINGS"
+        }
+      }
+    ],
+    "children": [
+      "#include:Augment_insights.json",
+      "#include:Accelerate_Delivery.json",
+      "#include:Offload_origin.json",
+      "#include:Strengthen_security.json",
+      "#include:Increase_availability.json",
+      "#include:Minimize_payload.json"
+    ],
+    "comments": "The Default Rule template contains all the necessary and recommended features. Rules are evaluated from top to bottom and the last matching rule wins.",
+    "variables": [
+      {
+        "name": "PMUSER_ORIGIN_SERVER",
+        "value": "${env.origin_hostname}",
+        "description": "Origin Server Hostname",
+        "hidden": false,
+        "sensitive": false
+      }
+    ],
+    "options": {
+      "is_secure": true
+    }
+  }
+}
