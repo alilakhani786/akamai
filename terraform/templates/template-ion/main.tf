@@ -1,7 +1,10 @@
 /*
   Author: Noorali (Ali) Lakhani @ nlakhani@akamai.com
   Creation date: 03/03/2022
-  Description: Onboarding Delivery Configuration Automation Project
+  Purpose: Automate Onboarding Akamai Delivery Configuration 
+  Repo: https://github.com/alilakhani786/akamai/tree/main/terraform
+
+  main.tf is the entry point to terraform project
 */
 
 locals {}
@@ -17,27 +20,27 @@ data "akamai_contract" "contract" {
 
 data "akamai_property_rules_template" "rules" {
   template_file = abspath("${path.module}/property-snippets/main.json")
-  # variable origin_hostname is taken from the Terraform variables file and injected in the Origin Server Property Behavior. This defines the location of your Origin.
+
   variables {
     name  = "origin_hostname"
     value = var.origin_hostname
     type  = "string"
   }
 
-  # variable cp_code is taken from the Terraform variables file and injected in the CP Code Property Behavior. This is used for billing, monitoring and reporting.
+
   variables {
-    name = "cp_code"
+    name  = "cp_code"
     value = parseint(replace(akamai_cp_code.cp_code.id, "cpc_", ""), 10)
-    type = "number"
+    type  = "number"
   }
 
 }
 
 resource "akamai_cp_code" "cp_code" {
-    name = var.cpcode_name
-    group_id = data.akamai_group.group.id
-    contract_id = data.akamai_contract.contract.id
-    product_id = var.product_id
+  name        = var.cpcode_name
+  group_id    = data.akamai_group.group.id
+  contract_id = data.akamai_contract.contract.id
+  product_id  = var.product_id
 }
 
 resource "akamai_edge_hostname" "res-edgeHostname" {
@@ -65,7 +68,8 @@ resource "akamai_property" "res-property" {
   rule_format = var.rule_format
   rules       = data.akamai_property_rules_template.rules.json
 }
-/*
+
+
 # Activate property in staging
 resource "akamai_property_activation" "res-property" {
   property_id = akamai_property.res-property.id
@@ -74,4 +78,6 @@ resource "akamai_property_activation" "res-property" {
   network     = upper("staging")
   note        = "Test Automation"
 }
-*/
+
+
+
