@@ -52,6 +52,14 @@ ION-Template is a Terraform project which enables you to automate onboarding of 
 * Ensure you have .edgerc file and section_name setup in provider.tf file. Ensure all the variables are correctly setup in tfvars.
 * Goto root folder of the project and run terraform init, terraform plan, terraform apply. Note: you may want to connect ```akamai_property_activation``` resource in ```main.tf``` for the first run for sanity check as activation takes time. This is how I do it.
 
+## References
+
+* [Akamai Terraform Provider](https://registry.terraform.io/providers/akamai/akamai/latest/docs)
+* [Akamai CLi](https://github.com/akamai/cli)
+* [Akamai Docker](https://github.com/akamai/akamai-docker)
+* [Introduction to Akamai Developer Tools](https://techdocs.akamai.com/developer/docs/welcome-to-the-akamai-developer-documentation-hub)
+
+<!-->
 ### Review
 |  |  |  |  |  |  |
 |--|--|--|--|--|--|
@@ -65,10 +73,10 @@ ION-Template is a Terraform project which enables you to automate onboarding of 
 |               |           |               | Origin Server Hostname      |  *{Origin Server Hostname}*   |
 |               |           |               | HTTP / HTTPS Port           |  *Yes*                    |
 |               |           |               | Allow Clients To Set True Client IP Header |  *No*      |
+-->
 
 
-
-### <br /><br /><div align="center">Happy Terraforming!</div>
+### <br /><div align="center">Happy Terraforming!</div>
 <br />
 
 </div>

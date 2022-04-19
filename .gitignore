@@ -38,3 +38,4 @@ override.tf.json
 
 terraform/propertyManager/.terraform.lock.hcl
 terraform/templates/template-AAP+ASM/.terraform.lock.hcl
+terraform/templates/template-ion/.terraform.lock.hcl
