@@ -26,18 +26,18 @@ data "akamai_property_rules_template" "rules" {
 
   # variable cp_code is taken from the Terraform variables file and injected in the CP Code Property Behavior. This is used for billing, monitoring and reporting.
   variables {
-    name = "cp_code"
+    name  = "cp_code"
     value = parseint(replace(akamai_cp_code.cp_code.id, "cpc_", ""), 10)
-    type = "number"
+    type  = "number"
   }
 
 }
 
 resource "akamai_cp_code" "cp_code" {
-    name = var.cpcode_name
-    group_id = data.akamai_group.group.id
-    contract_id = data.akamai_contract.contract.id
-    product_id = var.product_id
+  name        = var.cpcode_name
+  group_id    = data.akamai_group.group.id
+  contract_id = data.akamai_contract.contract.id
+  product_id  = var.product_id
 }
 
 resource "akamai_edge_hostname" "res-edgeHostname" {
