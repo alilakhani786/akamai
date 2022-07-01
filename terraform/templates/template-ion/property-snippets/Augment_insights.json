@@ -71,7 +71,9 @@
             "logCustomLogField": false,
             "logHost": false,
             "logReferer": false,
-            "logUserAgent": false
+            "logUserAgent": false,
+            "logEdgeIP": false,
+            "logXForwardedFor": false
           }
         }
       ],
