@@ -73,7 +73,7 @@
             "logReferer": false,
             "logUserAgent": false,
             "logEdgeIP": false,
-            "logXForwardedFor": false
+            "logXForwardedFor": false 
           }
         }
       ],
