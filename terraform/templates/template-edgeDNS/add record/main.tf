@@ -17,14 +17,11 @@ provider "akamai" {
 
 locals {}
 
-//data "akamai_group" "group" {}
-
 data "akamai_group" "group" {
   group_name  = var.group_name
   contract_id = var.contract_id
 }
 
-//data "akamai_contract" "contract" {}
 
 data "akamai_contract" "contract" {
   group_name = var.group_name
