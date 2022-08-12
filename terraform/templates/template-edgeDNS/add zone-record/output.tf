@@ -18,17 +18,10 @@ output "ip_behavior" {
   sensitive = false
 }
 
-
-
 output "hostname" {
   value     = akamai_dns_record.CNAME_record.name
   sensitive = false
 }
-
-
-
-
-
 
 output "domain" {
   value     = akamai_dns_zone.test_primary_zone.zone
