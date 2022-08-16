@@ -1,0 +1,11 @@
+variable "edgerc_config_section" {}
+variable "contract_id" {}
+variable "group_name" {}
+variable "hostname" {}
+variable "configuration_name" {}
+variable "configuration_description" {}
+variable "network" {}
+variable "email" {}
+variable "activation_notes" {}
+variable "first_policy_name" {}
+variable "first_policy_prefix" {}
