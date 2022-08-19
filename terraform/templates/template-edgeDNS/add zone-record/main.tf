@@ -45,8 +45,7 @@ resource "akamai_dns_zone" "test_primary_zone" {
   zone           = var.domain
   type           = "PRIMARY"
   comment        = "This is a test  primary zone"
-  sign_and_serve = true
-  sign_and_serve_algorithm = "ECDSA_P256_SHA256"
+  sign_and_serve = false
 }
 
 data "akamai_authorities_set" "ns" {
