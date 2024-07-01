@@ -1,0 +1,18 @@
+FROM node:10-alpine
+
+#create app directory
+WORKDIR /app
+
+# install app dependencies
+COPY package*.json ./
+
+#Run NPM install
+
+RUN npm install
+
+#bundle app source
+COPY . .
+
+EXPOSE 3001
+
+CMD [ "npm", "start" ]
