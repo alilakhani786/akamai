@@ -18,6 +18,10 @@ app.get('/', (req, res) => {
     });
   });
 
+app.get('/info', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'))
+})
+
 const server = app.listen(process.env.PORT || 3001, () => {
     console.log(`CDA server started on port: ${server.address().port}`);
 });
