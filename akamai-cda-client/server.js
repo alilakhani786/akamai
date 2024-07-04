@@ -3,19 +3,14 @@ const path = require('path');
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.set('view engine', 'pug');
-
-/*
-app.get('/', (req, res) => {
-    res.send("Hello from CDA NodeJS Server");
-});
-*/
+// const home = express.static(path.join(__dirname, 'views'));
+app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
-    res.render('home', {
-      title: 'Akamai CDA Portal',
-    });
+    // res.render('home', {
+    //   title: 'Akamai CDA Portal',
+    // });
+    res.send("Hello from Akamai")
   });
 
 app.get('/info', (req, res) => {
