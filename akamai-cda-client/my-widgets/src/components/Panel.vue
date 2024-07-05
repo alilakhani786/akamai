@@ -1,4 +1,3 @@
-<!-- Row.vue -->
 <template>
     <div class="row">
         <h2 class="title">{{title}}</h2>

@@ -1,8 +1,9 @@
 <template>
     <CRow :md="{ cols: 3 }">
         <CCol>
-            <CCard color="info">
-                <CCardImage orientation="top" src="../src/assets/Akamai.png" />
+            <CCard text-color="info" class="mb-3 border-top-3"  :class="'border-' + 'info'">
+                <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
+                <img src='@/assets/Akamai.png'/>
                 <CCardBody>
                     <CCardTitle>Card title</CCardTitle>
                     <CCardText>The company offers cloud security, mobile and web performance, carrier, and media delivery solutions. </CCardText>
@@ -11,8 +12,9 @@
             </CCard>
         </CCol>
         <CCol>
-            <CCard color="warning">
-                <CCardImage orientation="top" src="../src/assets/Akamai.png" />
+            <CCard text-color="warning" class="mb-3 border-top-3" :class="'border-' + 'warning'" >
+                <!-- <CCardImage orientation="top" src="@/assets/Akamai.png" /> -->
+                <img src='@/assets/Akamai.png'/>
                 <CCardBody>
                     <CCardTitle>Card title</CCardTitle>
                     <CCardText>The company offers cloud security, mobile and web performance, carrier, and media delivery solutions.</CCardText>
@@ -22,7 +24,8 @@
         </CCol>
         <CCol>
             <CCard color="info">
-                <CCardImage orientation="top" src="../src/assets/Akamai.png" />
+                <!-- <CCardImage orientation="top" src="../src/assets/Akamai.png" /> -->
+                <img src='@/assets/Akamai.png'/>
                 <CCardBody>
                     <CCardTitle>Card title</CCardTitle>
                     <CCardText>The company offers cloud security, mobile and web performance, carrier, and media delivery solutions.</CCardText>
@@ -38,7 +41,8 @@
 
 <script>
 import { CCard, CCardGroup, CCardText, CCardBody, CCardTitle, CRow, CCol, CCardImage } from '@coreui/vue';
-import '@coreui/coreui/dist/css/coreui.min.css'
+import '@coreui/coreui/dist/css/coreui.min.css';
+import akamaiImage from "@/assets/Akamai.png"
 
 export default {
     name: 'cards',
@@ -50,7 +54,8 @@ export default {
         CCardTitle,
         CCol,
         CRow,
-        CCardImage
+        CCardImage,
     },
+
 };
 </script>
