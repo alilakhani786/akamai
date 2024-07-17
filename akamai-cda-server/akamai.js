@@ -13,18 +13,37 @@ const eg = new EdgeGrid({
 function getUserProfile() {
   return new Promise((resolve, reject) => {
     eg.auth({
-      path: '/identity-management/v3/user-profile',
+      path: '/contract-api/v1/reportingGroups/',
       method: 'GET',
-      headers: {},
-      body: data
-    });
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      qs: {
+        "accountSwitchKey" : "B-V-43575RT:1-8BYUX"
+      },
+
+    })
 
     eg.send(function(error, response, body) {
-      if (error) {
-        reject(error);
-      } else {
-        resolve(body)
+      // if (error) {
+      //   reject(error);
+      // } else {
+      //   resolve(body)
+      // }
+      // console.log(JSON.stringify(JSON.parse(body), null, 2))
+      response = JSON.parse(body)
+      console.log(response)
+      active = []
+
+      for (const item in response) {
+        if (response[item].status == "active") {
+          active.push(response[item])
+        }
       }
+      // console.log(active)
+      // // console.log(JSON.stringify(JSON.parse(active), null, 2))
+      resolve(active)
     });
 
   })
