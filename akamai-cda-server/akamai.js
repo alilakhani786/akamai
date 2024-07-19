@@ -10,7 +10,7 @@ const eg = new EdgeGrid({
   section: 'default'
 });
 
-function getUserProfile() {
+function getUserProfile(inputId) {
   return new Promise((resolve, reject) => {
     eg.auth({
       path: '/contract-api/v1/reportingGroups/',
@@ -20,7 +20,8 @@ function getUserProfile() {
         "Accept": "application/json",
       },
       qs: {
-        "accountSwitchKey" : "B-V-43575RT:1-8BYUX"
+        // "accountSwitchKey" : "B-V-43575RT:1-8BYUX"
+        "accountSwitchKey": inputId
       },
 
     })

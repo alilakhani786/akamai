@@ -11,9 +11,10 @@ const router = createRouter({
       component: Home
     },
     {
-      path: '/data',
+      path: '/data/:id',
       name: 'Customer Data',
-      component: Data
+      component: Data,
+      props: true
     },
 
   ]

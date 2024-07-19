@@ -20,13 +20,14 @@ app.get('/', (req, res) => {
     res.send('Hello, Lynette!');
 });
 app.get('/akamai', (req, res) => {
-    getUserProfile().then(data => {
-        res.send(data);
-    })
-    .catch(error => {
-        console.error('Error fetching user profile:', error);
-        res.json({ error: error.message });
-    });
+    const inputId = req.query.id;
+    if(inputId) {
+        getUserProfile(inputId).then(data => {
+            res.send(data);
+        })
+    } else {
+        res.status(400).json({error: "No switchkey provided"})
+    }
 });
 
 
