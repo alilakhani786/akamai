@@ -1,40 +1,47 @@
 <template>
   <div id="app">
     <div>
+      <p class="switchkey_text">Switchkey: <b>{{ id }}</b></p>
       <Panel title="Title 1">
         <CRow :md="{ cols: 3 }">
         <CCol>
-            <CCard text-color="info" class="mb-3 border-top-3"  :class="'border-' + 'info'">
+            <CCard text-color="info" class="mb-3 border-top-3 card"  :class="'border-' + 'info'">
                 <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-                <CCardHeader>{{ id }}</CCardHeader>
+                <CCardHeader><b>CP Code Reporting Group</b></CCardHeader>
                 <img src='@/assets/Akamai.png'/>
                 <CCardBody>
-                    <CCardTitle class="mb-2 text-body-secondary">CP Code Reporting Group</CCardTitle>
-                    <CCardText v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText>
-                    <div class="link">
-                      <CCardLink href="#">LEARN MORE ></CCardLink>
+                    <!-- <CCardTitle style="font-family: 'Lucida Console'"class="mb-2 text-body-secondary">CP Code Reporting Group</CCardTitle> -->
+                    <CCardText class='content-text' v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText>
+                    <div class="link_container">
+                      <button class="link" @click="goDetail">Learn More ></button>
                     </div>
                 </CCardBody>
             </CCard>
         </CCol>
         <CCol>
-            <CCard text-color="warning" class="mb-3 border-top-3" :class="'border-' + 'warning'" >
-                <!-- <CCardImage orientation="top" src="@/assets/Akamai.png" /> -->
+          <CCard text-color="warning" class="mb-3 border-top-3 card"  :class="'border-' + 'warning'">
+                <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
+                <CCardHeader>CP Code Reporting Group</CCardHeader>
                 <img src='@/assets/Akamai.png'/>
                 <CCardBody>
-                    <CCardTitle>Card title</CCardTitle>
-                    <CCardText>The company of cloud security, mobile and web performance, carrier, and media delivery solutions.</CCardText>
-                    <CCardText><small class="text-body-secondary">Last updated 3 mins ago</small></CCardText>
+                    <CCardText class='content-text' v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText>
+                    <div class="link_container">
+                      <button class="link" @click="goDetail">Learn More ></button>
+                    </div>
                 </CCardBody>
             </CCard>
         </CCol>
         <CCol>
-            <CCard color="info">
-                <CCardImage orientation="top" src="../src/assets/Akamai.png" /> 
+          <CCard text-color="info" class="mb-3 border-top-3 card"  :class="'border-' + 'info'">
+                <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
+                <CCardHeader>CP Code Reporting Group</CCardHeader>
+                <img src='@/assets/Akamai.png'/>
                 <CCardBody>
-                    <CCardTitle>Card title</CCardTitle>
-                    <CCardText>The company offers cloud security, mobile and web performance, carrier, and media delivery solutions.</CCardText>
-                    <CCardText><small class="text-body-secondary">Last updated 3 mins ago</small></CCardText>
+                    <CCardTitle class="mb-2 text-body-secondary">CP Code Reporting Group</CCardTitle>
+                    <CCardText v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText>
+                    <div class="link_container">
+                      <button class="link" @click="goDetail">Learn More ></button>
+                    </div>
                 </CCardBody>
             </CCard>
         </CCol>
@@ -45,35 +52,44 @@
       <Panel title="Title 2">
         <CRow :md="{ cols: 3 }">
         <CCol>
-            <CCard text-color="info" class="mb-3 border-top-3"  :class="'border-' + 'info'">
+          <CCard text-color="info" class="mb-3 border-top-3 card"  :class="'border-' + 'info'">
                 <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-                <CCardHeader>Header</CCardHeader>
+                <CCardHeader>CP Code Reporting Group</CCardHeader>
                 <img src='@/assets/Akamai.png'/>
-                <CCardBody align-items="center" >
-                    <CCardTitle class="title">CP Code Reporting Group</CCardTitle>
+                <CCardBody>
+                    <CCardTitle class="mb-2 text-body-secondary">CP Code Reporting Group</CCardTitle>
                     <CCardText v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText>
-                    <CButton color="info" variant="outline" href="#">Go somewhere</CButton>
+                    <div class="link_container">
+                      <button class="link" @click="goDetail">LEARN MORE ></button>
+                    </div>
                 </CCardBody>
             </CCard>
         </CCol>
         <CCol>
-            <CCard text-color="warning" class="mb-3 border-top-3" :class="'border-' + 'warning'" >
-                <!-- <CCardImage orientation="top" src="@/assets/Akamai.png" /> -->
+          <CCard text-color="info" class="mb-3 border-top-3 card"  :class="'border-' + 'info'">
+                <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
+                <CCardHeader>CP Code Reporting Group</CCardHeader>
                 <img src='@/assets/Akamai.png'/>
                 <CCardBody>
-                    <CCardTitle>Card title</CCardTitle>
-                    <CCardText>The company of cloud security, mobile and web performance, carrier, and media delivery solutions.</CCardText>
-                    <CCardText><small class="text-body-secondary">Last updated 3 mins ago</small></CCardText>
+                    <CCardTitle class="mb-2 text-body-secondary">CP Code Reporting Group</CCardTitle>
+                    <CCardText v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText>
+                    <div class="link_container">
+                      <button class="link" @click="goDetail">LEARN MORE ></button>
+                    </div>
                 </CCardBody>
             </CCard>
         </CCol>
         <CCol>
-            <CCard color="info">
-                <CCardImage orientation="top" src="../src/assets/Akamai.png" /> 
+          <CCard text-color="info" class="mb-3 border-top-3 card"  :class="'border-' + 'info'">
+                <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
+                <CCardHeader>CP Code Reporting Group</CCardHeader>
+                <img src='@/assets/Akamai.png'/>
                 <CCardBody>
-                    <CCardTitle>Card title</CCardTitle>
-                    <CCardText>The company offers cloud security, mobile and web performance, carrier, and media delivery solutions.</CCardText>
-                    <CCardText><small class="text-body-secondary">Last updated 3 mins ago</small></CCardText>
+                    <CCardTitle class="mb-2 text-body-secondary">CP Code Reporting Group</CCardTitle>
+                    <CCardText v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText>
+                    <div class="link_container">
+                      <button class="link" @click="goDetail">LEARN MORE ></button>
+                    </div>
                 </CCardBody>
             </CCard>
         </CCol>
@@ -85,7 +101,7 @@
 
 <script>
 // import Cards from '../Cards.vue';
-import { CCard, CCardGroup, CCardText, CCardBody, CCardTitle, CRow, CCol, CCardImage, CCardLink, CCardHeader } from '@coreui/vue';
+import { CCard, CCardGroup, CCardText, CCardBody, CCardTitle, CRow, CCol, CCardImage, CCardLink, CCardHeader, CCardFooter } from '@coreui/vue';
 import '@coreui/coreui/dist/css/coreui.min.css';
 import axios from 'axios';
 import Panel from '../Panel.vue';
@@ -105,7 +121,8 @@ export default {
     CRow,
     CCardImage,
     CCardLink,
-    CCardHeader
+    CCardHeader,
+    CCardFooter
   },
   // defineProps({
   //   id: String
@@ -119,12 +136,22 @@ export default {
     console.log('Fetching ID: ', this.id)
       axios
       .get(`http://localhost:3000/akamai?id=${this.id}`)
-      .then(response => (this.info = response.data))
+      .then(response => {
+        this.info = response.data 
+      })
       .catch(error => {
           console.error('Error fetching data:', error);
       });
+    },
+  
+  methods: {
+    goDetail() {
+      console.log("clicked")
+      this.$router.push(`/data/${this.id}/detail`)
+    },
   }
 };
+
 </script>
 <script setup>
 defineProps({
@@ -134,20 +161,41 @@ defineProps({
 
 
 <style scoped>
+  .switchkey_text {
+    text-align: right;
+  }
  .title {
     font-family:Tahoma, Verdana, sans-serif;
     font-size: 25px;
     color: #000;
     text-align: center;
 }
- .button {
-    background-color:"info"; /* Green */
-    align-items: center;
+ .link_container {
+    display: flex;
+    justify-content: center;
  }
   .link {
-    justify-content: center;
-    /* border-style: solid; */
+    align-items: center;
     display: flex;
-    margin-top: 50px
+    /* margin-bottom: 5px; */
+    text-decoration: underline;
+    background: none;
+    color: blue;
+    position: absolute;
+    justify-content: center;
+    bottom: 15px;
+    border: none;
+    font-size: 15px
 }
+  .link:hover {
+    color: blueviolet
+  }
+  .card {
+    width: 350px;   /* Fixed width */
+    height: 400px;  /* Fixed height */
+    margin: 5px
+  }
+  .content-text {
+    color: black
+  }
 </style>

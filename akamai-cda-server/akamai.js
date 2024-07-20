@@ -27,12 +27,6 @@ function getUserProfile(inputId) {
     })
 
     eg.send(function(error, response, body) {
-      // if (error) {
-      //   reject(error);
-      // } else {
-      //   resolve(body)
-      // }
-      // console.log(JSON.stringify(JSON.parse(body), null, 2))
       response = JSON.parse(body)
       console.log(response)
       active = []

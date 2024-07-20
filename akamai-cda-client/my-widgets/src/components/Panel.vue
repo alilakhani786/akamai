@@ -13,13 +13,17 @@ defineProps(['title'])
 
 <style scoped>
 .row {
-    border: 1px solid #000;
-    padding: 20px;
+    /* padding: 20px; */
     flex-direction: row;
+    margin-top: 20px;
+    display: flex;
+    /* margin: 10px */
+    /* background-color: rgb(66, 51, 51); */
 }
 .title {
     margin: 0 0 10px 0;
     font-size: 1.5em;
+    font-family: 'Lucida Console'
 }
 .content {
     margin-top: 10px
