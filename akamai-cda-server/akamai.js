@@ -10,10 +10,10 @@ const eg = new EdgeGrid({
   section: 'default'
 });
 
-function getUserProfile(inputId) {
+function property_hostname(inputId) {
   return new Promise((resolve, reject) => {
     eg.auth({
-      path: '/contract-api/v1/reportingGroups/',
+      path: '/papi/v1/hostnames',
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
@@ -28,22 +28,13 @@ function getUserProfile(inputId) {
 
     eg.send(function(error, response, body) {
       response = JSON.parse(body)
-      console.log(response)
-      active = []
-
-      for (const item in response) {
-        if (response[item].status == "active") {
-          active.push(response[item])
-        }
-      }
-      // console.log(active)
-      // // console.log(JSON.stringify(JSON.parse(active), null, 2))
-      resolve(active)
+      // console.log(response)
+      resolve(response)
     });
 
   })
   
 }
 
-module.exports = {getUserProfile}
+module.exports = {property_hostname}
 

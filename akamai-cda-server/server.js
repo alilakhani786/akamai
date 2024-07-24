@@ -1,30 +1,24 @@
 const express = require('express')
 const cors = require('cors')
-const {getUserProfile} = require('./akamai')
+const {count_property, property_details} = require('./business_logic')
 const app = express()
 app.use(cors())
 
-const EdgeGrid = require('akamai-edgegrid');
-
-var data = 'bodyData';
 
 // Supply the path to your .edgerc file and name
 // of the section with authorization to the client
 // you are calling (default section is 'default')
-const eg = new EdgeGrid({
-  path: './.edgerc',
-  section: 'default'
-});
-
 app.get('/', (req, res) => {
     res.send('Hello, Lynette!');
 });
-app.get('/akamai', (req, res) => {
+app.get('/akamai', async(req, res) => {
     const inputId = req.query.id;
     if(inputId) {
-        getUserProfile(inputId).then(data => {
-            res.send(data);
-        })
+        // count_property(inputId).then(data => {
+        //     res.send(data);
+        // })
+        card_details = await count_property(inputId)
+        res.send({card_details})
     } else {
         res.status(400).json({error: "No switchkey provided"})
     }

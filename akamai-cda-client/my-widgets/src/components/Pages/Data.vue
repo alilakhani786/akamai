@@ -2,7 +2,7 @@
   <div id="app">
     <div>
       <p class="switchkey_text">Switchkey: <b>{{ id }}</b></p>
-      <Panel title="Title 1">
+      <Panel title="Administration">
         <CRow :md="{ cols: 3 }">
         <CCol>
             <CCard text-color="info" class="mb-3 border-top-3 card"  :class="'border-' + 'info'">
@@ -21,7 +21,7 @@
         <CCol>
           <CCard text-color="warning" class="mb-3 border-top-3 card"  :class="'border-' + 'warning'">
                 <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-                <CCardHeader>CP Code Reporting Group</CCardHeader>
+                <CCardHeader><b>CP Code Reporting Group</b></CCardHeader>
                 <img src='@/assets/Akamai.png'/>
                 <CCardBody>
                     <CCardText class='content-text' v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText>
@@ -34,7 +34,7 @@
         <CCol>
           <CCard text-color="info" class="mb-3 border-top-3 card"  :class="'border-' + 'info'">
                 <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-                <CCardHeader>CP Code Reporting Group</CCardHeader>
+                <CCardHeader><b>CP Code Reporting Group</b></CCardHeader>
                 <img src='@/assets/Akamai.png'/>
                 <CCardBody>
                     <CCardTitle class="mb-2 text-body-secondary">CP Code Reporting Group</CCardTitle>
@@ -49,18 +49,31 @@
       </Panel>
     </div>
     <div>
-      <Panel title="Title 2">
+      <Panel title="Property Statistics">
         <CRow :md="{ cols: 3 }">
-        <CCol>
-          <CCard text-color="info" class="mb-3 border-top-3 card"  :class="'border-' + 'info'">
+          <CCol>
+            <CCard text-color="info" class="mb-3 border-top-3 card"  :class="'border-' + 'info'">
                 <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-                <CCardHeader>CP Code Reporting Group</CCardHeader>
+                <CCardHeader><b>CP Code Reporting Group</b></CCardHeader>
                 <img src='@/assets/Akamai.png'/>
                 <CCardBody>
-                    <CCardTitle class="mb-2 text-body-secondary">CP Code Reporting Group</CCardTitle>
-                    <CCardText v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText>
+                    <!-- <CCardTitle style="font-family: 'Lucida Console'"class="mb-2 text-body-secondary">CP Code Reporting Group</CCardTitle> -->
+                    <CCardText class='content-text' v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText>
                     <div class="link_container">
-                      <button class="link" @click="goDetail">LEARN MORE ></button>
+                      <button class="link" @click="goDetail">Learn More ></button>
+                    </div>
+                </CCardBody>
+            </CCard>
+        </CCol>
+        <CCol>
+          <CCard text-color="warning" class="mb-3 border-top-3 card"  :class="'border-' + 'warning'">
+                <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
+                <CCardHeader><b>CP Code Reporting Group</b></CCardHeader>
+                <img src='@/assets/Akamai.png'/>
+                <CCardBody>
+                    <CCardText class='content-text' v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText>
+                    <div class="link_container">
+                      <button class="link" @click="goDetail">Learn More ></button>
                     </div>
                 </CCardBody>
             </CCard>
@@ -68,27 +81,13 @@
         <CCol>
           <CCard text-color="info" class="mb-3 border-top-3 card"  :class="'border-' + 'info'">
                 <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-                <CCardHeader>CP Code Reporting Group</CCardHeader>
+                <CCardHeader><b>CP Code Reporting Group</b></CCardHeader>
                 <img src='@/assets/Akamai.png'/>
                 <CCardBody>
                     <CCardTitle class="mb-2 text-body-secondary">CP Code Reporting Group</CCardTitle>
                     <CCardText v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText>
                     <div class="link_container">
-                      <button class="link" @click="goDetail">LEARN MORE ></button>
-                    </div>
-                </CCardBody>
-            </CCard>
-        </CCol>
-        <CCol>
-          <CCard text-color="info" class="mb-3 border-top-3 card"  :class="'border-' + 'info'">
-                <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-                <CCardHeader>CP Code Reporting Group</CCardHeader>
-                <img src='@/assets/Akamai.png'/>
-                <CCardBody>
-                    <CCardTitle class="mb-2 text-body-secondary">CP Code Reporting Group</CCardTitle>
-                    <CCardText v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText>
-                    <div class="link_container">
-                      <button class="link" @click="goDetail">LEARN MORE ></button>
+                      <button class="link" @click="goDetail">Learn More ></button>
                     </div>
                 </CCardBody>
             </CCard>
