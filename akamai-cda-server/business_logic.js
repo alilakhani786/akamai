@@ -1,34 +1,57 @@
-const {property_hostname} = require('./akamai')
+const {property_hostname, appsec_config} = require('./akamai')
 
-let property_details = []
-
-/*
-Each functon below will return a card_details (a json block), which contains 'front' and 'back' of the widget, 
-which contains data to be displayed in the front and details of each card.
-*/
-
-// 
+ 
 function count_property(inputId) {
     return property_hostname(inputId).then(data => {
-                console.log(data.hostnames)
+                let property_array = []
                 hostnames = data.hostnames.items
+                
+                let property_map = {} // used to check duplicate product
                 hostnames.forEach(element => {
-                    // console.log(element)
-                    property = {
-                        "Property Name" : element.propertyName,
-                        "Contract ID" : element.contractId,
-                        "Group ID" : element.groupId,
+                    if(!property_map.hasOwnProperty(element.propertyId)) {
+                        const property = {
+                            "Property Name" :  element.propertyName,
+                            "Contract ID" : element.contractId,
+                            "Group ID" :  element.groupId,
+                            "Property Hostname" : element.cnameFrom
+                        }
+                        property_map[element.propertyId] = ''
+                        property_array.push(property)
                     }
-                    property_details.push(property)
+
                 });
-                console.log(property_details)
-                card_details = { 
-                    "front" : data.hostnames.totalItems,
-                    "back" : property_details
-                }
-                return card_details
+                const result = { 
+                    "Property Count" : property_array.length,
+                    "Property List" : property_array
+                }                
+                return result
             })
 }
+function WAF_protected(inputId) {
+    return appsec_config(inputId).then(data => {
+        let count = 0;
+        hostname_list = []
+        const config = data.configurations;
+        config.forEach(element => {
+            if(element.hasOwnProperty("productionHostnames")) {
+                count += element.productionHostnames.length
+                hostname_list.push(element.productionHostnames)
+            }
+        })
+        const result = {
+            "WAF Protected Hostnames Count" : count,
+            "WAF Hostname List" : hostname_list
+        }
+        console.log(result)
+        return result
+    })
+}
+async function property_card(inputId) {
+    const hostname = await count_property(inputId)
+    const WAF_hostname = await WAF_protected(inputId)
+    const card_details = Object.assign({}, hostname, WAF_hostname)
+    return card_details
+}
 
-module.exports = {count_property, property_details}
+module.exports = {property_card}
 

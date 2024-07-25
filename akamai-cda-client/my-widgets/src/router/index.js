@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Data from '../components/Pages/Data.vue'
 import Home from '../components/Pages/Home.vue'
-import Detail from '../components/Pages/Detail.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,11 +16,6 @@ const router = createRouter({
       component: Data,
       props: true
     },
-    {
-      path: '/data/:id/detail',
-      name: 'Customer Data Detail',
-      component: Detail,
-    }
 
   ]
 })

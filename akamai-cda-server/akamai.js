@@ -33,8 +33,32 @@ function property_hostname(inputId) {
     });
 
   })
-  
 }
 
-module.exports = {property_hostname}
+function appsec_config(inputId) {
+  return new Promise((resolve, reject) => {
+    eg.auth({
+      path: '/appsec/v1/configs',
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      qs: {
+        // "accountSwitchKey" : "B-V-43575RT:1-8BYUX"
+        "accountSwitchKey": inputId
+      },
+
+    })
+
+    eg.send(function(error, response, body) {
+      response = JSON.parse(body)
+      // console.log(response)
+      resolve(response)
+    });
+
+  })
+}
+
+module.exports = {property_hostname, appsec_config}
 

@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const {count_property, property_details} = require('./business_logic')
+const {property_card} = require('./business_logic')
 const app = express()
 app.use(cors())
 
@@ -14,11 +14,9 @@ app.get('/', (req, res) => {
 app.get('/akamai', async(req, res) => {
     const inputId = req.query.id;
     if(inputId) {
-        // count_property(inputId).then(data => {
-        //     res.send(data);
-        // })
-        card_details = await count_property(inputId)
-        res.send({card_details})
+        card_details = await property_card(inputId)
+        //res.send might send multiple card details in future
+        res.send(card_details)
     } else {
         res.status(400).json({error: "No switchkey provided"})
     }
