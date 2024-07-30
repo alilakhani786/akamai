@@ -33,7 +33,7 @@
           <CCol>
             <CCard text-color="info" class="mb-3 border-top-3 card" :class="'border-' + 'info'">
               <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-              <CCardHeader><b>Property Statistics</b></CCardHeader>
+              <CCardHeader><b>Title</b></CCardHeader>
               <img src='@/assets/Akamai.png' />
               <CCardBody>
                 <!-- <CCardText class='content-text'>hi</CCardText> -->
@@ -46,7 +46,7 @@
           <CCol>
             <CCard text-color="warning" class="mb-3 border-top-3 card" :class="'border-' + 'warning'">
               <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-              <CCardHeader><b>CP Code Reporting Group</b></CCardHeader>
+              <CCardHeader><b>Title</b></CCardHeader>
               <img src='@/assets/Akamai.png' />
               <CCardBody>
                 <!-- <CCardText class='content-text' v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText> -->
@@ -59,10 +59,9 @@
           <CCol>
             <CCard text-color="info" class="mb-3 border-top-3 card" :class="'border-' + 'info'">
               <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-              <CCardHeader><b>CP Code Reporting Group</b></CCardHeader>
+              <CCardHeader><b>Title</b></CCardHeader>
               <img src='@/assets/Akamai.png' />
               <CCardBody>
-                <CCardTitle class="mb-2 text-body-secondary">CP Code Reporting Group</CCardTitle>
                 <!-- <CCardText v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText> -->
                 <div class="link_container">
                   <button class="link" @click="goDetail">Learn More ></button>
@@ -79,19 +78,30 @@
           <CCol>
             <CCard text-color="info" class="mb-3 border-top-3 card" :class="'border-' + 'info'">
               <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-              <CCardHeader><b>Property Statistics</b></CCardHeader>
-              <img src='@/assets/Akamai.png' />
+              <CCardHeader style="text-align: center;"><b>Property Statistics</b></CCardHeader>
+              <!-- <img src='@/assets/WAF.png' /> -->
               <CCardBody>
+                <div class="row">
+                  <div class="column">
+                    <CSpinner v-if="loading" color="info"></CSpinner>
+                    <p v-else style="font-size: 60px; color: black;">{{ propertyCount }}</p>
+                    <p style="font-size: 18px;">Hostnames</p>
+                  </div>
+                  <div class="column">
+                    <CSpinner v-if="loading" color="info"></CSpinner>
+                    <p v-else style="font-size: 60px; color: black"> {{ WAFCount }}</p>
+                    <p style="font-size: 18px;">WAF Protected Hostnames</p>
+                  </div>
+                </div>
+                <!-- <div style="height: 10%;"><img src='@/assets/WAF.png' /></div> -->
                 <CListGroup flush>
-                  <CListGroupItem>
-                    Description
+                  <CListGroupItem style="text-align: center; font-size: 14px;">
+                    
+                  </CListGroupItem>
+                  <CListGroupItem style="text-align: center; font-size: 14px;  margin-top: 17px;">
+                    This card displays the counts of total hostnames and hostnames that are with WAF protected under this account
                   </CListGroupItem>
                   <!-- <CCardTitle style="font-family: 'Lucida Console'"class="mb-2 text-body-secondary">CP Code Reporting Group</CCardTitle> -->
-                  <CListGroupItem v-if="info">
-                    Property Count: {{ propertyCount }}<br>
-                    WAF Protected Hostnames Count: {{ WAFCount }}
-                  </CListGroupItem>
-                  <CListGroupItem class='content-text' v-else>Loading...</CListGroupItem>
                 </CListGroup>
                 <div class="link_container">
                   <button class="link" @click="goDetail">Learn More ></button>
@@ -102,7 +112,7 @@
           <CCol>
             <CCard text-color="warning" class="mb-3 border-top-3 card" :class="'border-' + 'warning'">
               <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-              <CCardHeader><b>CP Code Reporting Group</b></CCardHeader>
+              <CCardHeader><b>Title</b></CCardHeader>
               <img src='@/assets/Akamai.png' />
               <CCardBody>
                 <!-- <CCardText class='content-text' v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText> -->
@@ -115,10 +125,9 @@
           <CCol>
             <CCard text-color="info" class="mb-3 border-top-3 card" :class="'border-' + 'info'">
               <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-              <CCardHeader><b>CP Code Reporting Group</b></CCardHeader>
+              <CCardHeader><b>Title</b></CCardHeader>
               <img src='@/assets/Akamai.png' />
               <CCardBody>
-                <CCardTitle class="mb-2 text-body-secondary">CP Code Reporting Group</CCardTitle>
                 <!-- <CCardText v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText> -->
                 <div class="link_container">
                   <button class="link" @click="goDetail">Learn More ></button>
@@ -139,7 +148,7 @@ import {
   CCardImage, CCardLink, CCardHeader, CCardFooter, CModalBody,
   CTable, CTableHead, CTableBody, CTableHeaderCell, CTableRow, CTableDataCell,
   CListGroupItem, CNav, CNavItem,
-  CListGroup
+  CListGroup, CSpinner
 } from '@coreui/vue';
 import '@coreui/coreui/dist/css/coreui.min.css';
 import axios from 'axios';
@@ -147,6 +156,7 @@ import Panel from '../Panel.vue';
 import Tabs from '../Tabs.vue';
 import Modal from '../Modal.vue';
 import akamaiImage from '@/assets/Akamai.png';
+
 
 export default {
   name: 'App',
@@ -274,5 +284,18 @@ defineProps({
 
 .content-text {
   color: black
+}
+
+.row {
+  display: flex;
+  height: 50%;
+  /* align-items: center; */
+  color: black;
+}
+
+.column {
+  flex:50%;
+  text-align: center;
+  align-items: center
 }
 </style>

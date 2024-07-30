@@ -22,8 +22,9 @@ defineProps(['title'])
 }
 .title {
     margin: 0 0 10px 0;
-    font-size: 1.5em;
-    font-family: 'Lucida Console'
+    font-size: 2em;
+    font-family: 'Arial';
+    font-weight: bold;
 }
 .content {
     margin-top: 10px

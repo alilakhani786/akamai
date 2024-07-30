@@ -1,6 +1,6 @@
 <template>
     <div id="app" >
-        <img src="@/assets/Akamai.png" width="40%" /><br><br>
+        <img src="@/assets/Akamai_white.png" width="40%" /><br><br>
         <input placeholder=" Enter Switchkey" v-model="inputId" @keyup.enter="sendSwitchkey" size="50">
     </div>
 </template>
