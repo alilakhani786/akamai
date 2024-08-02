@@ -31,43 +31,13 @@
       <Panel title="Administration">
         <CRow :md="{ cols: 3 }">
           <CCol>
-            <CCard text-color="info" class="mb-3 border-top-3 card" :class="'border-' + 'info'">
-              <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-              <CCardHeader><b>Title</b></CCardHeader>
-              <img src='@/assets/Akamai.png' />
-              <CCardBody>
-                <!-- <CCardText class='content-text'>hi</CCardText> -->
-                <div class="link_container">
-                  <button class="link" @click="goDetail">Learn More ></button>
-                </div>
-              </CCardBody>
-            </CCard>
+            <Card></Card>
           </CCol>
           <CCol>
-            <CCard text-color="warning" class="mb-3 border-top-3 card" :class="'border-' + 'warning'">
-              <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-              <CCardHeader><b>Title</b></CCardHeader>
-              <img src='@/assets/Akamai.png' />
-              <CCardBody>
-                <!-- <CCardText class='content-text' v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText> -->
-                <div class="link_container">
-                  <button class="link" @click="goDetail">Learn More ></button>
-                </div>
-              </CCardBody>
-            </CCard>
+            <Card></Card>
           </CCol>
           <CCol>
-            <CCard text-color="info" class="mb-3 border-top-3 card" :class="'border-' + 'info'">
-              <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-              <CCardHeader><b>Title</b></CCardHeader>
-              <img src='@/assets/Akamai.png' />
-              <CCardBody>
-                <!-- <CCardText v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText> -->
-                <div class="link_container">
-                  <button class="link" @click="goDetail">Learn More ></button>
-                </div>
-              </CCardBody>
-            </CCard>
+            <Card></Card>
           </CCol>
         </CRow>
       </Panel>
@@ -110,30 +80,21 @@
             </CCard>
           </CCol>
           <CCol>
-            <CCard text-color="warning" class="mb-3 border-top-3 card" :class="'border-' + 'warning'">
-              <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-              <CCardHeader><b>Title</b></CCardHeader>
-              <img src='@/assets/Akamai.png' />
-              <CCardBody>
-                <!-- <CCardText class='content-text' v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText> -->
-                <div class="link_container">
-                  <button class="link" @click="goDetail">Learn More ></button>
-                </div>
-              </CCardBody>
-            </CCard>
+            <Card>
+              <div style="text-align: left; font-weight: 600;line-height: 2;">
+              All Hostnames: 
+              <span class="data">{{ propertyCount }}</span> <br>
+              <!-- <CSpinner v-if="loading" color="info"></CSpinner>
+              <p v-else style="color: black;">{{ propertyCount }}</p> <br> -->
+              WAF Protected: 
+              <span class="data">{{ WAFCount }}</span> <br>
+              All Properties: 
+              <span class="data">{{ propertyCount }}</span>
+            </div>
+            </Card>
           </CCol>
           <CCol>
-            <CCard text-color="info" class="mb-3 border-top-3 card" :class="'border-' + 'info'">
-              <!-- <CCardImage orientation="top" src="akamaiImage" /> -->
-              <CCardHeader><b>Title</b></CCardHeader>
-              <img src='@/assets/Akamai.png' />
-              <CCardBody>
-                <!-- <CCardText v-for="item in info" :key="item.id">{{ item.id }} - {{ item.name }}</CCardText> -->
-                <div class="link_container">
-                  <button class="link" @click="goDetail">Learn More ></button>
-                </div>
-              </CCardBody>
-            </CCard>
+            <Card></Card>
           </CCol>
         </CRow>
       </Panel>
@@ -156,6 +117,7 @@ import Panel from '../Panel.vue';
 import Tabs from '../Tabs.vue';
 import Modal from '../Modal.vue';
 import akamaiImage from '@/assets/Akamai.png';
+import Card from '../Card.vue';
 
 
 export default {
@@ -297,5 +259,9 @@ defineProps({
   flex:50%;
   text-align: center;
   align-items: center
+}
+.data {
+  color: blue;
+  font-weight: 600
 }
 </style>

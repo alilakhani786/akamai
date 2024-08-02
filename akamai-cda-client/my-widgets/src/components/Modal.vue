@@ -2,16 +2,9 @@
     <CModal size="lg" scrollable :visible="visibleScrollableDemo" @close="closeModal"
         aria-labelledby="ScrollingLongContentExampleLabel2">
         <CModalHeader>
-            <CModalTitle id="ScrollingLongContentExampleLabel2">Modal title</CModalTitle>
+            <!-- <CModalTitle id="ScrollingLongContentExampleLabel2">Modal title</CModalTitle> -->
         </CModalHeader>
         <slot></slot>
-        <!-- <CModalBody>
-        {{ text }}
-    </CModalBody> -->
-
-        <!-- <template #cbody>
-            <slot name="cbody"></slot>
-        </template> -->
     </CModal>
 </template>
 
