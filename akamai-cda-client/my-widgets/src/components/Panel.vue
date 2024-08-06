@@ -13,12 +13,10 @@ defineProps(['title'])
 
 <style scoped>
 .row {
-    /* padding: 20px; */
-    flex-direction: row;
-    margin-top: 20px;
+    margin: 10px;
     display: flex;
-    /* margin: 10px */
-    /* background-color: rgb(66, 51, 51); */
+    /* border: 1px solid black; */
+    width: 100%
 }
 .title {
     margin: 0 0 10px 0;
@@ -27,6 +25,9 @@ defineProps(['title'])
     font-weight: bold;
 }
 .content {
-    margin-top: 10px
+    flex-direction: row;
+    display: flex;
+    gap: 15px;
+
 }
 </style>

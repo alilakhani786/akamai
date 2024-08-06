@@ -12,11 +12,12 @@
   align-items: center;
   display: flex;
   color: #2c3e50;
-  margin: 30px;
-  margin-top: 30px;
+  margin: 10px;
+  margin-top: 10px;
   height: auto;
   flex-direction: column;
   /* border: 2px solid red; */
-  width:100%
+  width:100%;
+  text-align: left;
 }
 </style>
