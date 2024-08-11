@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const {property_card} = require('./business_logic')
-const {list_certs} = require('./cert_business_logic')
+const {list_certs, create_cert, modify_cert} = require('./cert_business_logic')
 const app = express()
 app.use(cors())
 
@@ -22,13 +22,33 @@ app.get('/akamai', async(req, res) => {
         res.status(400).json({error: "No switchkey provided"})
     }
 });
-app.get('/test', async(req, res) => {
+app.get('/listcert', async(req, res) => {
     const inputId = req.query.id;
     if(true) {
-        contracts = await list_certs()
-        console.log(contracts)
-        //res.send might send multiple card details in future
-        res.send(contracts)
+        certs = await list_certs()
+        res.send(certs)
+    } else {
+        res.status(400).json({error: "No switchkey provided"})
+    }
+});
+
+app.get('/createcert', async(req, res) => {
+    const inputId = req.query.id;
+    if(true) {
+        cert = await create_cert()
+        console.log(cert)
+        res.send(cert)
+    } else {
+        res.status(400).json({error: "No switchkey provided"})
+    }
+});
+
+app.get('/modifycert', async(req, res) => {
+    // get enrollmentId from path
+    if(true) {
+        res = await modify_cert(226941)
+        console.log(res)
+        res.send(res)
     } else {
         res.status(400).json({error: "No switchkey provided"})
     }
