@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    parameters {
+        choice(name: 'ROUTE', choices: ['/createcert', '/listcert', '/modifycert', '/deletecert'], description: 'Select the route to call')
+        string(name: 'ENROLLMENT_ID', defaultValue: '', description: 'Enter the enrollment ID (leave empty if not applicable)')
+    }
+    stages {
+        stage('Checkout Code') {
+            steps {
+                // Checkout code from GitHub
+                git branch: 'temp', url: 'https://github.com/alilakhani786/akamai.git'
+            }
+        }
+        
+        stage('Run API Request') {
+            steps {
+                script {
+                    def route = params.ROUTE
+                    def enrollmentId = params.ENROLLMENT_ID
+                    def url = "http://localhost:3000${route}"
+                    if(enrollmentId) {
+                        url += "?enrollmentId=${enrollmentId}"
+                    }
+                    echo "Triggering API request to ${url}..."
+                    bat "curl -X GET ${url}"
+                }
+            }
+        }
+    }
+}

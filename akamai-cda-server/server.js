@@ -44,9 +44,9 @@ app.get('/createcert', async(req, res) => {
 });
 
 app.get('/modifycert', async(req, res) => {
-    // get enrollmentId from path
-    if(true) {
-        changes = await modify_cert(226941)
+    const enrollmentId = req.query.enrollmentId;
+    if(enrollmentId) {
+        changes = await modify_cert(enrollmentId)
         console.log(res.statusCode, ": ", changes)
         res.send(changes)
     } else {
@@ -55,9 +55,9 @@ app.get('/modifycert', async(req, res) => {
 });
 
 app.get('/deletecert', async(req, res) => {
-    // get enrollmentId from path
-    if(true) {
-        changes = await delete_cert(226941)
+    const enrollmentId = req.query.enrollmentId;
+    if(enrollmentId) {
+        changes = await delete_cert(enrollmentId)
         res.send(changes)
     } else {
         res.status(400).json({error: "No switchkey provided"})
