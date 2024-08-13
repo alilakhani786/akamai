@@ -232,7 +232,7 @@ function update_enrollment(enrollmentId) {
           "region": "MA",
         },
         "adminContact": {
-          "addressLineOne": "1 Raffles Place",
+          "addressLineOne": "35 Prince George's Park",
           "addressLineTwo": null,
           "city": "Singapore",
           "country": "SG",
@@ -263,12 +263,10 @@ function update_enrollment(enrollmentId) {
       qs: {
         "accountSwitchKey": "B-V-43575RT:1-8BYUX",
         "allow-staging-bypass": true,
-        "allow-cancel-pending-changes": false
-
-        //   "contractId": "V-434SAU2"
+        "allow-cancel-pending-changes": true,
+        "force-renewal": false
         // "accountSwitchKey": inputId
       },
-
     })
     eg.send(function (error, response, body) {
       if (error) {
@@ -281,6 +279,31 @@ function update_enrollment(enrollmentId) {
   })
 }
 
+function delete_enrollment(enrollmentId) {
+  return new Promise((resolve, reject) => {
+    eg.auth({
+      path: `/cps/v2/enrollments/${enrollmentId}`,
+      method: 'DELETE',
+      headers: {
+        "Accept": "application/vnd.akamai.cps.enrollment-status.v1+json"
+      },
+      qs: {
+        "accountSwitchKey": "B-V-43575RT:1-8BYUX",
+        "allow-cancel-pending-changes": true,
+        // "accountSwitchKey": inputId
+      },
+    })
+    eg.send(function (error, response, body) {
+      if (error) {
+        console.log("Error occurred: ", error)
+      }
+      response = JSON.parse(body)
+      console.log(response)
+      resolve(response)
+    });
 
-module.exports = { list_contracts, list_enrollments, create_enrollment, update_enrollment }
+  })
+}
+
+module.exports = { list_contracts, list_enrollments, create_enrollment, update_enrollment, delete_enrollment }
 

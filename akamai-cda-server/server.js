@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const {property_card} = require('./business_logic')
-const {list_certs, create_cert, modify_cert} = require('./cert_business_logic')
+const {list_certs, create_cert, modify_cert, delete_cert} = require('./cert_business_logic')
 const app = express()
 app.use(cors())
 
@@ -46,9 +46,19 @@ app.get('/createcert', async(req, res) => {
 app.get('/modifycert', async(req, res) => {
     // get enrollmentId from path
     if(true) {
-        res = await modify_cert(226941)
-        console.log(res)
-        res.send(res)
+        changes = await modify_cert(226941)
+        console.log(res.statusCode, ": ", changes)
+        res.send(changes)
+    } else {
+        res.status(400).json({error: "No switchkey provided"})
+    }
+});
+
+app.get('/deletecert', async(req, res) => {
+    // get enrollmentId from path
+    if(true) {
+        changes = await delete_cert(226941)
+        res.send(changes)
     } else {
         res.status(400).json({error: "No switchkey provided"})
     }

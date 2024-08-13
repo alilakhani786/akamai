@@ -1,4 +1,4 @@
-const {list_contracts, list_enrollments, create_enrollment, update_enrollment} = require('./akamai-cert')
+const {list_contracts, list_enrollments, create_enrollment, update_enrollment, delete_enrollment} = require('./akamai-cert')
 
 async function list_certs() {
     
@@ -35,6 +35,12 @@ async function create_cert() {
 
 async function modify_cert(enrollmentId) {
     const res = await update_enrollment(enrollmentId)
+    return res
 }
-module.exports = {list_certs, create_cert, modify_cert}
+
+async function delete_cert(enrollmentId) {
+    const res = await delete_enrollment(enrollmentId)
+    return res
+}
+module.exports = {list_certs, create_cert, modify_cert, delete_cert}
 
