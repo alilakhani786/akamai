@@ -9,5 +9,5 @@
 
 provider "akamai" {
   edgerc         = "~/.edgerc"
-  config_section = ""
+  config_section = "sea"
 }
