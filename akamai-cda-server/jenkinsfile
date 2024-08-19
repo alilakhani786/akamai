@@ -1,8 +1,8 @@
 def remote = [:]
-  remote.name = 'lynette-remote'
-  remote.host = '139.162.33.12'
-  remote.user = 'lynette'
-  remote.password = 'Akamai@123'
+  remote.name = ''
+  remote.host = ''
+  remote.user = ''
+  remote.password = ''
   remote.allowAnyHosts = true
 pipeline {
     agent any
