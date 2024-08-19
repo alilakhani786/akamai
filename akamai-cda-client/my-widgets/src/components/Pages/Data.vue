@@ -9,10 +9,36 @@
       </div>
     </div>
     <Panel>
-      <Card :keys="card1key" :values="card1value"/>
-      <Card :keys="card1key" :values="card1value"/>
-      <Card :keys="card3key" :values="card3value"/>
-      <Card :keys="card1key" :values="card1value"/>
+      <Card :keys="card1key" :values="card1value" logo="WAF.png"/>
+      <Card logo="hits.png">
+        <div>
+        <b>Total Offload</b><br><br> 
+        <div style="flex-direction: row; display: flex; font-size: 12px; gap: 7px;">
+          <div>
+            <b>26.2B+</b><br>
+            <b>Edge Hits</b>
+          </div>
+          <div>
+            <b>449.5TB</b><br>
+            <b>Bandwidth Offload</b>
+          </div>
+        </div></div>
+      </Card>
+      <Card :keys="card3key" :values="card3value" logo="MSC.png">
+        <div style="margin-bottom: 7px;">
+        <b>MSCs</b><br>
+      </div>
+      </Card>
+      <Card logo="billing.png">
+        <div style="margin-bottom: 7px;">
+        <b>Billing</b><br>
+      </div>
+        <div>
+          <b>6,77604.000 GB</b><br>
+        <span style="font-size: 10px;"><b>Monthly usage summary details for all CP Codes</b></span>
+        </div>
+        
+      </Card>
     </Panel>
     <Panel>
       <div class="chart" style="height:350px; flex: 3; border: 1px solid black; border-radius: 20px; padding: 10px;">
@@ -83,17 +109,14 @@ export default {
       return this.info["WAF Protected Hostnames Count"]
     },
     card1value() {
-      return [this.propertyCount, this.WAFCount, '?', "?"]
+      return [this.propertyCount, this.WAFCount, 57, 15]
     },
     card2value() {
       return ['?', '?', '?', "?"]
     },
     card3value() {
-      return ['?', '?', '?']
+      return [57, 48, 57]
     },
-    card4value() {
-      return ['?', '?', '?', "?"]
-    }
   }
 };
 

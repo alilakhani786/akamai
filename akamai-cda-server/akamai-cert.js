@@ -10,7 +10,7 @@ const eg = new EdgeGrid({
   section: 'default'
 });
 
-function list_contracts() {
+function list_contracts(switchkey) {
   return new Promise((resolve, reject) => {
     eg.auth({
       path: '/papi/v1/contracts',
@@ -19,8 +19,8 @@ function list_contracts() {
         "Accept": "application/json",
       },
       qs: {
-        "accountSwitchKey": "B-V-43575RT:1-8BYUX"
-        // "accountSwitchKey": inputId
+        // "accountSwitchKey": "B-V-43575RT:1-8BYUX"
+        "accountSwitchKey": switchkey
       },
 
     })
@@ -34,7 +34,7 @@ function list_contracts() {
   })
 }
 
-function list_enrollments(id) {
+function list_enrollments(switchkey, contractid) {
   return new Promise((resolve, reject) => {
     eg.auth({
       path: '/cps/v2/enrollments',
@@ -44,10 +44,10 @@ function list_enrollments(id) {
       },
 
       qs: {
-        "accountSwitchKey": "B-V-43575RT:1-8BYUX",
-        "contractId": id
+        // "accountSwitchKey": "B-V-43575RT:1-8BYUX",
+        "contractId": contractid,
         //   "contractId": "V-434SAU2"
-        // "accountSwitchKey": inputId
+        "accountSwitchKey": switchkey
       },
 
     })
@@ -63,7 +63,7 @@ function list_enrollments(id) {
   })
 }
 
-function create_enrollment(id) {
+function create_enrollment(switchkey, contractid) {
   return new Promise((resolve, reject) => {
     eg.auth({
       path: '/cps/v2/enrollments',
@@ -153,8 +153,8 @@ function create_enrollment(id) {
         },
       },
       qs: {
-        "accountSwitchKey": "B-V-43575RT:1-8BYUX",
-        "contractId": id
+        "accountSwitchKey": switchkey,
+        "contractId": contractid
         //   "contractId": "V-434SAU2"
         // "accountSwitchKey": inputId
       },
@@ -171,7 +171,7 @@ function create_enrollment(id) {
   })
 }
 
-function update_enrollment(enrollmentId) {
+function update_enrollment(switchkey, enrollmentId) {
   return new Promise((resolve, reject) => {
     eg.auth({
       path: `/cps/v2/enrollments/${enrollmentId}`,
@@ -261,7 +261,7 @@ function update_enrollment(enrollmentId) {
         },
       },
       qs: {
-        "accountSwitchKey": "B-V-43575RT:1-8BYUX",
+        "accountSwitchKey": switchkey,
         "allow-staging-bypass": true,
         "allow-cancel-pending-changes": true,
         "force-renewal": false
@@ -279,7 +279,7 @@ function update_enrollment(enrollmentId) {
   })
 }
 
-function delete_enrollment(enrollmentId) {
+function delete_enrollment(switchkey, enrollmentId) {
   return new Promise((resolve, reject) => {
     eg.auth({
       path: `/cps/v2/enrollments/${enrollmentId}`,
@@ -288,7 +288,7 @@ function delete_enrollment(enrollmentId) {
         "Accept": "application/vnd.akamai.cps.enrollment-status.v1+json"
       },
       qs: {
-        "accountSwitchKey": "B-V-43575RT:1-8BYUX",
+        "accountSwitchKey": switchkey,
         "allow-cancel-pending-changes": true,
         // "accountSwitchKey": inputId
       },

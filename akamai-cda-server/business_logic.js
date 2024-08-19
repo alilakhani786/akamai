@@ -42,7 +42,6 @@ function WAF_protected(inputId) {
             "WAF Protected Hostnames Count" : count,
             "WAF Hostname List" : hostname_list
         }
-        console.log(result)
         return result
     })
 }

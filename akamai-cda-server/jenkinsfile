@@ -1,15 +1,21 @@
+def remote = [:]
+  remote.name = 'lynette-remote'
+  remote.host = '139.162.33.12'
+  remote.user = 'lynette'
+  remote.password = 'Akamai@123'
+  remote.allowAnyHosts = true
 pipeline {
     agent any
     parameters {
-        choice(name: 'ROUTE', choices: ['/createcert', '/listcert', '/modifycert', '/deletecert'], description: 'Select the route to call')
-        string(name: 'ENROLLMENT_ID', defaultValue: '', description: 'Enter the enrollment ID (leave empty if not applicable)')
+        choice(name: 'ROUTE', choices: ['/listcert', '/createcert', '/modifycert', '/deletecert'], description: 'Select the route to call')
+        string(name: 'ENROLLMENT_ID', defaultValue: '', description: 'Enter the enrollment ID for /modifycert and /deletecert')
     }
     stages {
-        stage('Checkout Code') {
+        stage('ssh to Remote Server') {
             steps {
-                // Checkout code from GitHub
-                git branch: 'temp', url: 'https://github.com/alilakhani786/akamai.git'
+                sshCommand remote: remote, command: "hostnamectl"
             }
+            
         }
         
         stage('Run API Request') {
@@ -22,7 +28,8 @@ pipeline {
                         url += "?enrollmentId=${enrollmentId}"
                     }
                     echo "Triggering API request to ${url}..."
-                    bat "curl -X GET ${url}"
+                    def command = "curl -X GET ${url}"
+                    sshCommand remote: remote, command: command
                 }
             }
         }

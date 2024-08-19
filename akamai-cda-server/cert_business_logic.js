@@ -1,9 +1,9 @@
 const {list_contracts, list_enrollments, create_enrollment, update_enrollment, delete_enrollment} = require('./akamai-cert')
 
-async function list_certs() {
+async function list_certs(switchkey) {
     
     // get the list of contract id
-    const contract = await list_contracts();
+    const contract = await list_contracts(switchkey);
     const item = contract.contracts.items
     const contractIdArr = []
     item.forEach(element => {
@@ -12,14 +12,14 @@ async function list_certs() {
     });
 
     // get the certs 
-    const certPromises = contractIdArr.map(async element  => await list_enrollments(element))
-    const certArr = await Promise.all(certPromises)
-    return certArr;
+    const certs = await list_enrollments(switchkey, contractIdArr[0])
+    
+    return certs;
 }
 
-async function create_cert() {
+async function create_cert(switchkey) {
     // get the list of contract id
-    const contract = await list_contracts();
+    const contract = await list_contracts(switchkey);
     const item = contract.contracts.items
     const contractIdArr = []
     item.forEach(element => {
@@ -28,18 +28,18 @@ async function create_cert() {
     });
     
     // create enrollment 
-    const enrollment = await create_enrollment(contractIdArr[0]) // assumming only one contract id
+    const enrollment = await create_enrollment(switchkey, contractIdArr[0]) // assumming only one contract id
     return enrollment
 
 }
 
-async function modify_cert(enrollmentId) {
-    const res = await update_enrollment(enrollmentId)
+async function modify_cert(switchkey, enrollmentId) {
+    const res = await update_enrollment(switchkey, enrollmentId)
     return res
 }
 
-async function delete_cert(enrollmentId) {
-    const res = await delete_enrollment(enrollmentId)
+async function delete_cert(switchkey, enrollmentId) {
+    const res = await delete_enrollment(switchkey, enrollmentId)
     return res
 }
 module.exports = {list_certs, create_cert, modify_cert, delete_cert}
