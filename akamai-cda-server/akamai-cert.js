@@ -19,7 +19,6 @@ function list_contracts(switchkey) {
         "Accept": "application/json",
       },
       qs: {
-        // "accountSwitchKey": "B-V-43575RT:1-8BYUX"
         "accountSwitchKey": switchkey
       },
 
@@ -44,9 +43,7 @@ function list_enrollments(switchkey, contractid) {
       },
 
       qs: {
-        // "accountSwitchKey": "B-V-43575RT:1-8BYUX",
         "contractId": contractid,
-        //   "contractId": "V-434SAU2"
         "accountSwitchKey": switchkey
       },
 
@@ -128,11 +125,11 @@ function create_enrollment(switchkey, contractid) {
           "addressLineTwo": null,
           "city": "Singapore",
           "country": "SG",
-          "email": "lynetteleesy@gmail.com",
+          "email": "ll@gmail.com",
           "firstName": "Lynette",
           "lastName": "Lee",
           "organizationName": "Akamai",
-          "phone": "89312702",
+          "phone": "89322222",
           "postalCode": "048616",
           "region": "MA",
           "title": "Adminstrator"
@@ -142,11 +139,11 @@ function create_enrollment(switchkey, contractid) {
           "addressLineTwo": null,
           "city": "Singapore",
           "country": "SG",
-          "email": "lleesiyi@akamai.com",
+          "email": "ll@akamai.com",
           "firstName": "Lynette",
           "lastName": "Lee",
           "organizationName": "Akamai",
-          "phone": "89312702",
+          "phone": "89333333",
           "postalCode": "048616",
           "region": "MA",
           "title": "Solution Engineer"
@@ -155,8 +152,6 @@ function create_enrollment(switchkey, contractid) {
       qs: {
         "accountSwitchKey": switchkey,
         "contractId": contractid
-        //   "contractId": "V-434SAU2"
-        // "accountSwitchKey": inputId
       },
 
     })
@@ -227,7 +222,7 @@ function update_enrollment(switchkey, enrollmentId) {
           "city": "Singapore",
           "country": "SG",
           "name": "Akamai Technologies",
-          "phone": "89312702",
+          "phone": "89333333",
           "postalCode": "048616",
           "region": "MA",
         },
@@ -250,11 +245,11 @@ function update_enrollment(switchkey, enrollmentId) {
           "addressLineTwo": null,
           "city": "Singapore",
           "country": "SG",
-          "email": "lleesiyi@akamai.com",
+          "email": "ll@akamai.com",
           "firstName": "Lynette",
           "lastName": "Lee",
           "organizationName": "Akamai",
-          "phone": "89312702",
+          "phone": "89333333",
           "postalCode": "048616",
           "region": "MA",
           "title": "Solution Engineer"

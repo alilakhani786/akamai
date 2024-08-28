@@ -51,6 +51,13 @@ async function property_card(inputId) {
     const card_details = Object.assign({}, hostname, WAF_hostname)
     return card_details
 }
+async function another_card(inputId) {
+    // your code here 
+    const data1 = await count_property(inputId)
+    const data2 = await WAF_protected(inputId)
+    const card_details = Object.assign({}, data1, data2)
+    return card_details
+}
 
 module.exports = {property_card}
 

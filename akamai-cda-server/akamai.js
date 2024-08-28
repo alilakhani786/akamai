@@ -20,7 +20,6 @@ function property_hostname(inputId) {
         "Accept": "application/json",
       },
       qs: {
-        // "accountSwitchKey" : "B-V-43575RT:1-8BYUX"
         "accountSwitchKey": inputId
       },
 
@@ -45,7 +44,6 @@ function appsec_config(inputId) {
         "Accept": "application/json",
       },
       qs: {
-        // "accountSwitchKey" : "B-V-43575RT:1-8BYUX"
         "accountSwitchKey": inputId
       },
 
