@@ -10,7 +10,7 @@
 <div align="center">
 
 # Welcome to Ali Lakhani's Repo
-Built for Akamai, with Love!
+Built for Akamai
 
 [Getting started](#getting-started) •
 [Terraform templates](#terraform-templates) •
